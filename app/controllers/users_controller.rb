@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: %i[new create]
+  before_action only: %i[new create]
 
   def index
     @users = User.all
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.find(set_user)
+    @user = User.find(params[:id])
   end
 
   def create
@@ -37,6 +37,6 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.fetch(:user).permit(:name)
+    params.require(:user).permit(:name)
   end
 end

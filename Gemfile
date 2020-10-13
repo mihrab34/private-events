@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
+gem 'mini_racer', '~> 0.3.1'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 
 # Use Capistrano for deployment
