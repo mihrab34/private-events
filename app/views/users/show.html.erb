@@ -1,0 +1,11 @@
+
+<div>
+  <h1><%= @user.name.capitalize %>'s Events</h1>
+  <ul>
+    <% @user.events.each do |event|%>
+      <li>
+        <%=link_to event.name, event_path(event.id) %>
+    < /li>
+    <% end %>
+  </ul>
+</div>

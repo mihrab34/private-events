@@ -1,13 +1,15 @@
-<%= simple_form_for(@user) do |form| %>
-  <% form.error_notification %>
+<%= simple_form_for(@user) do |f| %>
+  <% f.error_notification %>
     
   <div class="container">
-    <div class="form-group">
-      <%= form.input :name, input_html: {class: "textarea"}, wrapper: false, label_html: {class: "label"} %>
+    <div class="form-inputs">
+      <%= f.input :name,
+            required: true,
+            input_html: { class: "input"}, wrapper: false, label_html: { class: "label"} %>
     </div>
 
     <div class="action form-group">
-      <%= form.button :submit, class: "btn-info mt-4" %>
+      <%= f.button :submit, class: "btn-info mt-4" %>
     </div>
   </div>
 <% end %>
