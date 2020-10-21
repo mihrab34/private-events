@@ -6,7 +6,6 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @user = User.all
   end
 
   def show

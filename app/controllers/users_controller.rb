@@ -28,6 +28,17 @@ class UsersController < ApplicationController
     @user = User.find(user_params)
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      flash[:success] = 'Object was successfully deleted.'
+      redirect_to root_path
+    else
+      flash[:error] = 'Something went wrong'
+      redirect_to @user
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
