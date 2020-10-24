@@ -13,19 +13,16 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
+@import "bootstrap";
 
- .navbar-brand {
-   color: white;
- }
+.navbar-brand {
+  color: white;
+}
 
- h4 {
-   color: #f0f8ff;
-  //  margin-top: 1rem;
- }
- 
- .navbar-dark .navbar-nav .nav-link {
-   color: #fff;
- }
+h4 {
+  color: #f0f8ff;
+}
 
- 
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
