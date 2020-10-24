@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action only: %i[new create]
+  before_action :set_user, only: %i[show edit update destroy]
 
   def index
     @users = User.all
@@ -10,16 +10,18 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @events_by_current_user = current_user.events
+    @upcoming_events = @user.attended_events.upcoming
+    @prev_events = @user.attended_events.previous
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Object successfully created"
+      flash[:success] = 'User successfully created'
       redirect_to @user
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
       render 'new'
     end
   end
