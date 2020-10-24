@@ -1,8 +1,14 @@
-<div class='px-6 py-4'>
-  <%= link_to 'Edit', edit_event_path(@event), class:'button is-primary' %>
-  <%= link_to 'Back', event_path, class:'button is-primary' %>
-</div>
-<div class='px-6 py-4'>
+<div class='px-6 py-4'> 
+  <div>
+    <h2 class ='mb-3' >
+      <% if current_user.name == @event.creator.name %>
+        <%= link_to 'Edit', edit_event_path(@event), class:'btn btn-primary' %>
+        <%= link_to 'Delete', event_path(@event.id), method: :delete, data: {confirm: 'Delete event?'}, class: 'hover:text-orange-600 text-xl' %>
+      <% end %>
+    </h2>
+    
+  </div>
+
   <div class="single-event">
     <p>
       <strong>Title: </strong>
@@ -20,21 +26,19 @@
     </p>
 
     <p>
-      <strong>Creator: </strong>
+      <strong>Location: </strong>
+      <%= @event.location %><br/>
+    </p>
+
+    <p>
+      <strong>Host: </strong>
       <%= @event.creator.name %>
     </p>
   </div>
 
-  <div class="event-btn" style="margin: 10px 0">
-    <%= event_attendance_button(@event) %>
-  </div>
-
-  <div class="event-attendees">
-    <p>
-      <strong>Attendees:</strong>
-      <% @attendees.each do |attendee| %>
-        <li><%= attendee.name %></li>
-      <% end %>
-    </p>
-  </div>
+  <strong>No. Invited: </strong><%= @event.invitees.count %><br/>
+  <strong>No. Declined: </strong><%= @event.declined.count %>, <%= @event.declined_list %><br/>
+  <strong>No. Attendees: </strong><%= @event.confirmed.count %>, <%= @event.confirmed_list %><br/>
+  <br/>
+  <%= link_to 'Back', event_path, class:'btn btn-primary' %>
 </div>
