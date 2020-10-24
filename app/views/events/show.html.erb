@@ -1,8 +1,8 @@
-div class="controls">
+<div class='px-6 py-4'>
   <%= link_to 'Edit', edit_event_path(@event), class:'button is-primary' %>
-  <%= link_to 'Back', events_path, class:'button is-primary' %>
+  <%= link_to 'Back', event_path, class:'button is-primary' %>
 </div>
-<div class="single-event-page box box-radius">
+<div class='px-6 py-4'>
   <div class="single-event">
     <p>
       <strong>Title: </strong>
@@ -16,7 +16,7 @@ div class="controls">
 
     <p>
       <strong>Date: </strong>
-      <%= @event.date.to_formatted_s(:long_ordinal) %>
+      <%= @event.date.strftime('%m/%d/%Y') %>
     </p>
 
     <p>

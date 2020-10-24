@@ -1,0 +1,8 @@
+<div>
+  <strong>Event: </strong><%= link_to event.title, event, class: 'underline hover:text-orange-600' %><br/>
+  <strong>Description</strong><%= link_to event.description%>
+  <strong>Date: </strong><%= event.date.strftime('%m/%d/%Y') %><br/>
+  <strong>Location: </strong><%= event.location %><br/>
+  <strong>Host: </strong><%= event.creator.name %><br/>
+  <br/>
+</div>
