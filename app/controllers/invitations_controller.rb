@@ -13,7 +13,7 @@ class InvitationsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     current_user.attended_events.destroy(@event)
-    flash[:notice]= 'Invitation was successfully destroyed.'
+    flash[:notice] = 'Invitation was successfully destroyed.'
     redirect_to user_path(current_user)
   end
 end
