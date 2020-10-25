@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @events_by_current_user = current_user.events
+    @events_by_current_user = @user.events
     @upcoming_events = @user.attended_events.upcoming
     @prev_events = @user.attended_events.previous
   end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = 'User successfully created'
-      redirect_to @user
+      redirect_to login_path
     else
       flash[:error] = 'Something went wrong'
       render 'new'
