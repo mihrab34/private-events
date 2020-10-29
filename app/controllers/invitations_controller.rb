@@ -4,7 +4,7 @@ class InvitationsController < ApplicationController
     @event = Event.find(params[:id])
     @attended_event = @event.invitations.create(attendee: current_user)
     if @attended_event.save
-      redirect_to events_path, notice: 'Thanks for following'
+      redirect_to events_path, notice: 'Thanks for Attending'
     else
       redirect_to events_path, alert: 'You can only attend once'
     end
