@@ -5,9 +5,10 @@
     <ul>
       <% @user.events.each do |event| %>
         <li>
-          <%= link_to event.title, events, class: 'hover:underline hover:text-orange-600' %><br>
+          <%= event.title.capitalize %><br>
           <%= event.description %><br>
-          <%=event.date %>
+          <%=event.date %><br>
+          <%= link_to 'Show', event %>
       </li> 
       <% end %>
     </ul>
@@ -18,9 +19,10 @@
     <ul>
       <% @upcoming_events.each do |event| %>
         <li>
-          <%= link_to event.title, events, class: 'hover:underline hover:text-orange-600' %><br>
+          <%= event.title.capitalize %><br>
           <%= event.description %><br>
-          <%=event.date %>
+          <%=event.date %><br>
+          <%= link_to 'Show', event %>
       </li>
       <% end %>
     </ul>
@@ -31,9 +33,10 @@
     <ul>
       <% @prev_events.each do |event| %>
         <li>
-          <%= link_to event.title, events, class: 'hover:underline hover:text-orange-600' %><br>
+          <%= event.title %><br>
           <%= event.description %><br>
-          <%=event.date %>
+          <%=event.date %><br>
+          <%= link_to 'Show', event %>
       </li>
       <% end %>
     </ul>
