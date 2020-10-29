@@ -1,13 +1,11 @@
-
 <div>
   <h1><%= @user.name.capitalize %>'s Events</h1>
   <i class="fa fa-calender" aria-hidden="true"></i></span>
-
     <h3>Created Events</h3>
     <ul>
       <% @user.events.each do |event| %>
         <li>
-          <%= link_to event.title, event_path(event.id), class: 'hover:underline hover:text-orange-600' %><br>
+          <%= link_to event.title, events, class: 'hover:underline hover:text-orange-600' %><br>
           <%= event.description %><br>
           <%=event.date %>
       </li> 
@@ -20,7 +18,7 @@
     <ul>
       <% @upcoming_events.each do |event| %>
         <li>
-          <%= link_to event.title, event_path(event.id), class: 'hover:underline hover:text-orange-600' %><br>
+          <%= link_to event.title, events, class: 'hover:underline hover:text-orange-600' %><br>
           <%= event.description %><br>
           <%=event.date %>
       </li>
@@ -33,14 +31,11 @@
     <ul>
       <% @prev_events.each do |event| %>
         <li>
-          <%= link_to event.title, event_path(event.id), class: 'hover:underline hover:text-orange-600' %><br>
+          <%= link_to event.title, events, class: 'hover:underline hover:text-orange-600' %><br>
           <%= event.description %><br>
           <%=event.date %>
       </li>
       <% end %>
     </ul>
     </div>
-  <% end %> 
 </div>
-
-

@@ -9,7 +9,7 @@
     
   </div>
 
-  <div class="single-event">
+  <div>
     <p>
       <strong>Title: </strong>
       <%= @event.title %>
@@ -35,10 +35,17 @@
       <%= @event.creator.name %>
     </p>
   </div>
+  <div class="btn btn-primary" style="margin: 10px 0">
+    <%= event_attendance_button(@event) %>
+  </div>
 
-  <strong>No. Invited: </strong><%= @event.invitees.count %><br/>
-  <strong>No. Declined: </strong><%= @event.declined.count %>, <%= @event.declined_list %><br/>
-  <strong>No. Attendees: </strong><%= @event.confirmed.count %>, <%= @event.confirmed_list %><br/>
-  <br/>
+  <div>
+    <p>
+      <strong>Attendees:</strong>
+      <% @attendees.each do |attendee| %>
+        <li><%= attendee.name %></li>
+      <% end %>
+    </p>
+  </div>
   <%= link_to 'Back', event_path, class:'btn btn-primary' %>
 </div>
