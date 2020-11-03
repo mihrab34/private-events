@@ -3,7 +3,7 @@
   <i class="fa fa-calender" aria-hidden="true"></i></span>
     <h3>Created Events</h3>
     <ul>
-      <% @user.events.each do |event| %>
+      <% @created_events.each do |event| %>
         <li>
           <%= event.title.capitalize %><br>
           <%= event.description %><br>

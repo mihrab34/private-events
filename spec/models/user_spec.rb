@@ -11,5 +11,6 @@ RSpec.describe User, type: :model do
     subject { User.create(name: 'name') }
 
     it { should validate_presence_of(:name) }
+    it { should validate_uniqueness_of(:name) }
   end
 end
