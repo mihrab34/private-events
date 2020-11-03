@@ -1,0 +1,51 @@
+<div class='px-6 py-4'> 
+  <div>
+    <h2 class ='mb-3' >
+      <% if current_user.name == @event.creator.name %>
+        <%= link_to 'Edit', edit_event_path(@event), class:'btn btn-info' %>
+        <%= link_to 'Delete', event_path(@event.id), method: :delete, data: {confirm: 'Delete event?'}, class: 'hover:text-orange-600 text-xl' %>
+      <% end %>
+    </h2>
+    
+  </div>
+
+  <div>
+    <p>
+      <strong>Title: </strong>
+      <%= @event.title %>
+    </p>
+
+    <p>
+      <strong>Description: </strong>
+      <%= @event.description %>
+    </p>
+
+    <p>
+      <strong>Date: </strong>
+      <%= @event.date.strftime('%m/%d/%Y') %>
+    </p>
+
+    <p>
+      <strong>Location: </strong>
+      <%= @event.location %><br/>
+    </p>
+
+    <p>
+      <strong>Host: </strong>
+      <%= @event.creator.name %>
+    </p>
+  </div>
+  <div class="btn btn-info" style="margin: 10px 0">
+    <%= event_attendance_button(@event) %>
+  </div>
+
+  <div>
+    <p>
+      <strong>Attendees:</strong>
+      <% @attendees.each do |attendee| %>
+        <li><%= attendee.name %></li>
+      <% end %>
+    </p>
+  </div>
+  <%= link_to 'Back', event_path, class:'btn btn-info' %>
+</div>

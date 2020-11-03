@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+.navbar-brand {
+  color: white;
+}
+
+h4 {
+  color: #f0f8ff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.all-events {
+  border: 2px solid rgb(80, 128, 201);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  max-width: 40%;
+  padding: 15px;
+}

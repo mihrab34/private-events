@@ -1,0 +1,9 @@
+<div class='px-6 py-4'>
+  <h2 class='font-bold underline text-lg mb-3'>Previous Events</h2>
+  <%= render partial: 'events', collection: @prev_events, as: :event %>
+</div>
+
+<div class='px-6'>
+  <h2 class='font-bold underline text-lg mb-3'>Upcoming Events</h2>
+  <%= render partial: 'events', collection: @upcoming_events, as: :event %>
+</div>
