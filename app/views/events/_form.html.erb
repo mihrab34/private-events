@@ -2,7 +2,7 @@
   <%= f.label 'Event Title:' %><br/>
   <%= f.text_field :title, {autofocus: true, required: true, class: 'mb-1 border border-black shadow appearance-none'} %><br/>
   <%= f.label 'Event Description:' %><br/>
-  <%= f.text_field :description, {autofocus: true, required: true, class: 'mb-1 border border-black shadow appearance-none'} %><br/>
+  <%= f.text_field :description, {autofocus: true, required: true, placeholder: 'Minimum Description Length is 10', class: 'mb-1 border border-black shadow appearance-none'} %><br/>
   <%= f.label 'Event date:' %><br/>
   <%= f.date_field :date, {required: true, class: 'mb-1 border border-black shadow appearance-none'} %><br/>
   <%= f.label 'Event location:' %><br/>
